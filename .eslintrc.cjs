@@ -10,9 +10,10 @@ module.exports = {
 	parserOptions: {
 		ecmaVersion: "latest",
 		sourceType: "module",
-		project: ["./tsconfig.json", "tsconfig.node.json"],
+		project: ["tsconfig.json", "tsconfig.app.json", "tsconfig.node.json"],
 		tsconfigRootDir: __dirname,
 	},
+	ignorePatterns: ["dist", ".eslintrc.cjs"],
 	plugins: ["react", "react-hooks", "@typescript-eslint", "tailwindcss"],
 	extends: [
 		"eslint:recommended",
@@ -34,6 +35,9 @@ module.exports = {
 	settings: {
 		react: {
 			version: "detect",
+		},
+		tailwindcss: {
+			config: "tailwind.config.js", // Certifique-se que este arquivo existe
 		},
 	},
 };
